@@ -7,6 +7,6 @@ Team Members:
 3) Rishi Soni
 
 Github Names:
-@vikhyatgoyal (https://github.com/vikhyatgoyal)
-@pavandhareshwar (https://github.com/pavandhareshwar)
-@rishisoni10 (https://github.com/rishisoni10)
+1) @vikhyatgoyal (https://github.com/vikhyatgoyal)
+2) @pavandhareshwar (https://github.com/pavandhareshwar) 
+3) @rishisoni10 (https://github.com/rishisoni10)
