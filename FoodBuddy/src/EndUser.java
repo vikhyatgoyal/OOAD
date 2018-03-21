@@ -5,7 +5,7 @@ public class EndUser extends Profile implements ModifyProfile{
 
 	/* Attributes */
 	private ArrayList<String> prefCuisine;
-	private String feedback;
+	private Feedback feedback;
 	
 	/* Methods */
 	/* Default constructor */
@@ -30,12 +30,12 @@ public class EndUser extends Profile implements ModifyProfile{
 	}
 	
 	/* Class methods */
-	public void updateFilter(Map<String, ArrayList<String> > hmap) {
+	public ArrayList<Map<String,String>> updateFilterAndGetRec(Filter filter) {
 		
 	}
 	
-	public void giveFeedback() {
+	public void giveFeedback(Feedback feedback) {
 		
 	}
-	
+		
 }

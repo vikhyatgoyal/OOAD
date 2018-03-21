@@ -3,7 +3,6 @@ public class Admin extends Profile implements ModifyProfile{
 	
 	/* Attributes */
 	private String advertisement;
-	private String infoTicker;
 	private String theme;
 	
 	/* Methods */
@@ -40,4 +39,5 @@ public class Admin extends Profile implements ModifyProfile{
 	public void setTheme(String theme) {
 		this.theme = theme;
 	}
+	
 }
