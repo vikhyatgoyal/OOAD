@@ -2,7 +2,7 @@
 public class Feedback {
 	
 	/* Attributes */
-	private String fbname;
+	private String fbName;
 	private String feedback;
 	private int rating;
 	private String date;
@@ -22,13 +22,13 @@ public class Feedback {
 	}
 	
 	/* Getter Methods */
-	public String getFbname() { return this.fbname; }
+	public String getFbName() { return this.fbName; }
 	public String getFeedback () { return this.feedback; }
 	public int getRating() { return this.rating; }
 	public String getDate() { return this.date; }
 	
 	/* Setter Methods */
-	public void setFbname(String fbname) { this.fbname = fbname; }
+	public void setFbName(String fbName) { this.fbName = fbName; }
 	public void setFeedback(String feedback) { this.feedback = feedback; }
 	public void setRating(int rating) { this.rating = rating; }
 	public void setDate(String date) { this.date = date; }

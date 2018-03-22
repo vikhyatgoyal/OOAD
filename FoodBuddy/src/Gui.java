@@ -11,7 +11,7 @@ public class Gui {
 	private ArrayList<String> typeDispField;
 	private ArrayList<String> fields;
 	private ArrayList<String> toggleButtons;
-	private Map<String, Integer> timeslots;
+	private Map<String, Integer> timeSlots;
 	private String title;
 	private String logo;
 	
@@ -30,11 +30,11 @@ public class Gui {
 		
 	}
 	
-	public String getUserInput(String fieldId) {
+	public Map<String, ArrayList<String> > getUserInput(ArrayList<String> fields) {
 		
 	}
 	
-	public Map< String, Integer > getUserTimeslot(ArrayList<String> timeSlots) {
+	public String getUserTimeSlot(ArrayList<String> timeSlots) {
 		
 	}
 	
@@ -49,6 +49,10 @@ public class Gui {
 	public Filter getUserFilters() {
 		
 	}
+
+    public String getRestaurantChoice() {
+    
+    }
 	
 	public Filter readDefaultFilter() {
 		
@@ -58,11 +62,11 @@ public class Gui {
 		
 	}
 	
-	public void displayTimeslots(Map<String, Integer> timeslot) {
+	public void displayTimeSlots(Map<String, Integer> timeSlot) {
 		
 	}
 	
-	public String getTimechoice(ArrayList<String> button) {
+	public String getTimeChoice(ArrayList<String> button) {
 		
 	}
 	
@@ -85,5 +89,9 @@ public class Gui {
 	public void displayTheme(String theme) {
 		
 	}
+
+    public void displayReservation() {
+
+    }
 	
 }

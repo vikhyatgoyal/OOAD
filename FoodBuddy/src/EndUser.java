@@ -30,12 +30,16 @@ public class EndUser extends Profile implements ModifyProfile{
 	}
 	
 	/* Class methods */
-	public ArrayList<Map<String,String>> updateFilterAndGetRec(Filter filter) {
+	public ArrayList< Map<String,String> > updateFilterAndGetRec(Filter filter) {
 		
 	}
 	
 	public void giveFeedback(Feedback feedback) {
 		
 	}
+
+    public void notifyEndUser() {
+    
+    }
 		
 }

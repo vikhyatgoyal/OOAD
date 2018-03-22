@@ -4,7 +4,7 @@ import java.util.Map;
 public class DbManager {
 	/* Attributes */
 	private ArrayList<String> hostProfileData;
-	private ArrayList<ArrayList<String>> menuList; 
+	private ArrayList< ArrayList<String> > menuList; 
 	private Map<String, Integer> availSlots;
 	private Filter filterData;
 	private ArrayList<Feedback> feedback;
@@ -30,11 +30,11 @@ public class DbManager {
 		
 	}
 	
-	public Map<String, Integer> fetchTimeslots(String restaurantName) {
+	public Map<String, Integer> fetchTimeSlots(String restName) {
 		
 	}
 	
-	public ArrayList<ArrayList<String>> fetchHostMenu(String restaurantName) {
+	public ArrayList< ArrayList<String> > fetchHostMenu(String restName) {
 		
 	}
 	
@@ -54,7 +54,7 @@ public class DbManager {
 		
 	}
 	
-	public void saveHostrofile(Profile profile) {
+	public void saveHostProfile(Profile profile) {
 		
 	}
 	
@@ -70,7 +70,11 @@ public class DbManager {
 		
 	}
 	
-	public void saveMenu(ArrayList<ArrayList<String>> menu) {
+	public void saveMenu(ArrayList< ArrayList<String> > menu) {
 		
 	}
+
+    public void saveReservation(String restName, String userTimeSlot, String email) {
+
+    }
 }

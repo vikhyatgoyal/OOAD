@@ -7,9 +7,9 @@ public class Host extends Profile implements ModifyProfile{
 	private ArrayList< ArrayList<String> > menu;
 	private String promotions;
 	private String feedback;
-	public int starRatings;
 	private String address;
-	public Map<String, Integer> timeslot;
+	public int starRatings;
+	public Map<String, Integer> timeSlots;
 	
 	/* Methods */
 	/* Default constructor */
@@ -32,7 +32,7 @@ public class Host extends Profile implements ModifyProfile{
 	}
 	
 	/* Class methods */
-	public void updateHostProfile(Map<String, ArrayList<String>> hprofile) {
+	public void updateHostProfile(Map< String, ArrayList<String> > hostProfile) {
 		
 		
 	}
@@ -45,22 +45,21 @@ public class Host extends Profile implements ModifyProfile{
 
 	}
 	
-	public void setMenu(Map<String, ArrayList<String>> hmap) {
+	public void updateMenu(ArrayList< ArrayList<String> > menu) {
 		
 	}
 	
-	public void updateMenu(ArrayList<ArrayList<String>> menu) {
+	public void updateAvailability(ArrayList<String> availability) {
 		
 	}
 	
-	
-	public void updateAvailability(ArrayList<String availability>) {
+	public int findRating(String restName) {
 		
 	}
-	
-	public int findRating(String restname) {
-		
-	}
+
+    public void notifyHost(String userTimeSlot, String email) {
+    
+    }
 	
  }
 

@@ -3,8 +3,8 @@ public abstract class Profile {
 	
 	/* Attributes */
 	private String name;
-	private String password;
 	private String email;
+	private String password;
 	private String mobile;
 	
 	/* Default constructor */
@@ -14,10 +14,10 @@ public abstract class Profile {
 	}
 	
 	/* Overloaded constructor */
-	public Profile(String name, String password, String email, String mobile) {
+	public Profile(String name, String email, String password, String mobile) {
 		setName(name);
-		setPassword(password);
 		setEmail(email);
+		setPassword(password);
 		setMobile(mobile);
 	}
 	
@@ -32,6 +32,7 @@ public abstract class Profile {
 	public void setEmail(String email) { this.email = email; }
 	public void setPassword(String password) { this.password = password; }
 	public void setMobile(String mobile) { this.mobile = mobile; }
-	
-	public Profile readProfile(String name) { return null; }
+
+    /* Class methods */
+	public Profile readProfile(String email) { return null; }
 }
