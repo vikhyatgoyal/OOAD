@@ -20,7 +20,7 @@ public class EndUser extends Profile implements ModifyProfile{
 	
 	/* Interface methods */
 	@Override
-	public void addProfile(String name, String email, String password, String mobile) {
+	public void addProfile(ArrayList<String> prefCuisine) {
 		
 	}
 	
