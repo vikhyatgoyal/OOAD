@@ -1,0 +1,4 @@
+com/cub/foodbuddy/SpringBootFoodbuddyApplication.class
+com/cub/foodbuddy/resource/ProfileResource.class
+com/cub/foodbuddy/model/Profile.class
+com/cub/foodbuddy/repository/ProfileRepository.class
