@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Profile {
+public abstract class Profile {
 
 	/* Attributes */
 	@Column(name = "name")
@@ -17,6 +17,7 @@ public class Profile {
 	private String password;
 	@Column(name = "mobile")
 	private String mobile;
+	private String type;
 	
 	/* Default Constructor */
 	public Profile() {
@@ -24,12 +25,13 @@ public class Profile {
 	}
 	
 	/* Overloaded constructor */
-	public Profile(String name, String email, String password, String mobile) {
+	public Profile(String name, String email, String password, String mobile, String type) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.mobile = mobile;
+		this.type = type;
 	}
 	/* Getters and Setters */
 	public String getName() {
@@ -55,5 +57,11 @@ public class Profile {
 	}
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 }
