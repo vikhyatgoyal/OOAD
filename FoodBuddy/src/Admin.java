@@ -18,7 +18,7 @@ public class Admin extends Profile implements ModifyProfile{
 	
 	/* Interface methods */
 	@Override
-	public void addProfile(String name, String email, String password, String mobile) {
+	public void addProfile(String advertisement, String theme) {
 		
 	}
 	
