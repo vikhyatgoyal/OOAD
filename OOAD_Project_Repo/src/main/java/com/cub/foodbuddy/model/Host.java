@@ -6,7 +6,7 @@ package com.cub.foodbuddy.model;
 import javax.persistence.Entity;
 
 @Entity
-public class Host extends Profile{
+public class Host extends Profile implements ModifyProfile{
 	/* Attributes */
 //	private ArrayList< ArrayList<String> > menu;
 //	private ArrayList<String> promotions; 
@@ -24,6 +24,17 @@ public class Host extends Profile{
 	{
 		super(name, email, password, mobile, type);
 	}
+	
+		/* Interface methods */
+	//@Override
+	//public void addProfile(ArrayList< ArrayList<String> > menu, String promotions, String feedback, String address, int starRatings, Map<String, Integer> timeSlots) {
+		
+	//}
+	
+	//@Override
+	//public void editProfile() {
+		
+	//}
 	
 //	public void updateHostProfile(Map< String, ArrayList<String> > hostProfile) {
 //		

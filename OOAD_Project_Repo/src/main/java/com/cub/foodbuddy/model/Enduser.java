@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 //import org.springframework.web.bind.annotation.RequestBody;
 
 @Entity
-public class EndUser extends Profile{
+public class EndUser extends Profile implements ModifyProfile{
 	
 	/* Attributes */
 //	private ArrayList<String> prefCuisine;
@@ -27,6 +27,17 @@ public class EndUser extends Profile{
 	public EndUser() {
 		super();
 	}
+	
+		/* Interface methods */
+//	@Override
+//	public void addProfile(ArrayList<String> prefCuisine) {
+		
+//	}
+	
+//	@Override
+//	public void editProfile() {
+		
+//	}
 	
 //	public void updateFilters(Filter filter) {
 //	}
