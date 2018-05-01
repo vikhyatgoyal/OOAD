@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: pavandhareshwar
+Build-Jdk: 9.0.1
+Implementation-Title: foodbud
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.cub.foodbuddy
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/foodbud
+Created-By: Maven Integration for Eclipse
+
