@@ -42,6 +42,22 @@ public class MainController {
 	@RequestMapping(value="/profiles/add/{type}", method = RequestMethod.POST)
 	public void addProfile(@RequestBody ProfileFactory profileFactory, @PathVariable String type) {
 		profileManager.addProfile(profileFactory, type);
+		
+
+	@RequestMapping(value="/endUser/profiles/edit/{email}", method = RequestMethod.POST)
+	public void editEndUserProfile(@RequestBody EndUser endUserprofile, @PathVariable String email) {
+		profileManager.editEndUserProfile(endUserprofile, email);
+	}
+	
+	@RequestMapping(value="/host/profiles/edit/{email}", method = RequestMethod.POST)
+	public void editHostProfile(@RequestBody Host hostprofile, @PathVariable String email) {
+		profileManager.editHostProfile(hostprofile, email);
+	}
+	
+	@RequestMapping(value="/admin/profile/delete/{email}", method = RequestMethod.DELETE)
+	public void deleteProfile(@PathVariable String email) {
+		profileManager.deleteProfile(email);
+	}
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
