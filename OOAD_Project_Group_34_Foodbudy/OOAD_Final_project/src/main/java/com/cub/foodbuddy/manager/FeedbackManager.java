@@ -34,4 +34,8 @@ public class FeedbackManager {
 	public List<Feedback> getFeedbackById(String email) {
 		return dbManager.getFeedbackById(email);
 	}
+	
+	public List<Feedback> getFeedbackByName(String name) {
+		return dbManager.getFeedbackByName(name);
+	}
 }
