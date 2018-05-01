@@ -302,4 +302,33 @@ public class DbManager {
 
 		return hostProfiles;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Recommendation> getRecommendationsFromDb(){
+		
+		List<Recommendation> recommendationInDB = new ArrayList<>();
+		
+		Session session = sessionFactory.openSession();                                                                                                          
+		session.beginTransaction();                                                                                                                              
+
+		recommendationInDB = session.createQuery("from Recommendation").list();                                                                                                                     
+
+		session.getTransaction().commit();                                                                                                                       
+
+		session.close();
+		
+		return recommendationInDB;
+	}
+	
+	public void saveRecommendationsToDb(Recommendation recommendation) {
+		Session session = sessionFactory.openSession();                                                                                                          
+		session.beginTransaction();                                                                                                                              
+
+		session.save(recommendation);                                                                                                                      
+
+		session.getTransaction().commit();                                                                                                                       
+
+		session.close();
+		
+	}
 }
