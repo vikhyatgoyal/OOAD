@@ -131,5 +131,12 @@ public class MainController {
 		Host profile = (Host) profileManager.getProfileByEmail(email);
 		return feedbackManager.getFeedbackByName(profile.getName());
 	}
+		
+	@RequestMapping(value = "/endUser/filter/display/{email}", method = RequestMethod.GET)
+	public Filter displayUserFilterById(@PathVariable String email){
+		/* Will call readDefaultFilter if needed */
+		EndUser profile = (EndUser) profileManager.getProfileByEmail(email);
+		return filterManager.getFilterById(profile);
+	}
 	
 }
