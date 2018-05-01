@@ -138,5 +138,11 @@ public class MainController {
 		EndUser profile = (EndUser) profileManager.getProfileByEmail(email);
 		return filterManager.getFilterById(profile);
 	}
+		
+	@RequestMapping(value = "/endUser/filter/change/{email}", method = RequestMethod.POST)
+	public void setUserFilterById(@RequestBody Filter filter, @PathVariable String email){
+		EndUser profile = (EndUser) profileManager.getProfileByEmail(email);
+		filterManager.setFilterById(profile, filter);
+	}
 	
 }
