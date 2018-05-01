@@ -6,6 +6,7 @@ public class Admin extends Profile{
 	/* Attributes */
 	
 	private ArrayList<String> advertisements = new ArrayList<>();
+//	private String theme;
 	
 	public Admin() {
 		
@@ -15,9 +16,9 @@ public class Admin extends Profile{
 		super(name, email, password, mobile, type);
 	}
 	
-	public void deleteProfile(String email) {
-		
-	}
+//	public void deleteProfile(String email) {
+//		
+//	}
 	
 	public void setAdvertisement(String advertisement) {
 		this.advertisements.add(advertisement);
