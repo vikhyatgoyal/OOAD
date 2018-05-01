@@ -43,4 +43,14 @@ public class FilterManager extends Observable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public Filter getFilterById(EndUser endUser){
+		return endUser.getFilter();
+	}
+	
+	public void setFilterById(EndUser endUser, Filter filter){
+		endUser.updateFilters(filter);
+
+		this.setEmail(endUser.getEmail());
+	}
 }
