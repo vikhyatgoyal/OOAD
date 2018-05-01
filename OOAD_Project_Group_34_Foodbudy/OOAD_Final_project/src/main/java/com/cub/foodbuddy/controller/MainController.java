@@ -19,6 +19,9 @@ public class MainController {
 	
     @Autowired
     private FilterManager filterManager;
+	
+    @Autowired
+    private FeedbackManager feedbackManager;
 
 	
 	@RequestMapping(value = "/profiles/display/all", method = RequestMethod.GET)
@@ -50,6 +53,13 @@ public class MainController {
 		EndUser profile = (EndUser) profileManager.getProfileByEmail(email);
 		profileManager.addDefaultEndUserFilter(profile, filter);
 		profileManager.editEndUserProfile(profile, email);
+	}
+		
+	@RequestMapping(value = "/endUser/feedback/add/{email}", method = RequestMethod.POST)
+	public void giveFeedback(@RequestBody Feedback feedback, @PathVariable String email){
+		/* Figure out how to cleanly extract email information from POST request body and 
+		 * use that as the id */
+		feedbackManager.giveFeedback(feedback, email);
 	}
 	
 }
