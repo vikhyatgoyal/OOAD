@@ -3,6 +3,11 @@ package com.cub.foodbuddy.model;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Host")
 public class Host extends Profile{
 	/* Attributes */
 //	private ArrayList<String> promotions;
