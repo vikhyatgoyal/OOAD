@@ -28,10 +28,10 @@ public class FeedbackManager {
 //			));
 	
 	public void giveFeedback(Feedback feedback, String email) {
-//		feedbackRepository.save(feedback);
-//		return feedbackRepository.findAll();
-		
-//		feedbacks.add(feedback);
 		dbManager.saveFeedbacksToDb(feedback);
+	}
+	
+	public List<Feedback> getFeedbackById(String email) {
+		return dbManager.getFeedbackById(email);
 	}
 }
