@@ -27,6 +27,11 @@ public class Recommendation {
 	public Recommendation() {
 		
 	}
+	
+	public Recommendation(ArrayList<String> hostNameList, String email) {
+		this.hostNameList = hostNameList;
+		this.email = email;
+	}
 
 	public String getEmail() {
 		return email;
