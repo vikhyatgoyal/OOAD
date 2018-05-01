@@ -113,8 +113,9 @@ public class RecommendationManager implements Observer{
 
 		return sortedRankHMap;
 	}
-		@Override
-		public void update(Observable arg0, Object arg1) {
+		
+	@Override
+	public void update(Observable arg0, Object arg1) {
 		/* When we have a changeFilter request from the user, 
 		 * we generate the new recommendation based on the updated 
 		 * filters and save it to database 
@@ -127,4 +128,17 @@ public class RecommendationManager implements Observer{
 		dbManager.saveRecommendationsToDb(recommendation);	
 	}
 	
+	public List<String> displayAutoUpdatedRecListFromDb(String email) {
+		ArrayList<Recommendation> recommendationAL = (ArrayList<Recommendation>) dbManager.getRecommendationsFromDb();
+		
+		ArrayList<String> hostNameListToReturn = new ArrayList<>();
+		
+		for (Recommendation r : recommendationAL) {
+			if (r.getEmail().equals(email)) {
+				hostNameListToReturn = r.getHostNameList();
+			}
+		}
+		
+		return hostNameListToReturn;
+	}
 }
