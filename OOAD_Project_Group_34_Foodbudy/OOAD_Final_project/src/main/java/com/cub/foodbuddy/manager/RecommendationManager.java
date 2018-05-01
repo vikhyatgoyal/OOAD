@@ -19,7 +19,7 @@ import com.cub.foodbuddy.model.Host;
 import com.cub.foodbuddy.model.Recommendation;
 
 @Service
-public class RecommendationManager{
+public class RecommendationManager implements Observer{
 
 	@Autowired
 	private DbManager dbManager;
@@ -113,4 +113,18 @@ public class RecommendationManager{
 
 		return sortedRankHMap;
 	}
+		@Override
+		public void update(Observable arg0, Object arg1) {
+		/* When we have a changeFilter request from the user, 
+		 * we generate the new recommendation based on the updated 
+		 * filters and save it to database 
+		 */
+		String email = ((FilterManager)arg0).getEmail();
+		ArrayList<String> hostNameList = getRecommendation(email);
+
+		Recommendation recommendation = new Recommendation(hostNameList, email);
+
+		dbManager.saveRecommendationsToDb(recommendation);	
+	}
+	
 }
