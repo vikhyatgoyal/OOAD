@@ -2,7 +2,9 @@ package com.cub.foodbuddy.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Embeddable;
 
+@Embeddable
 public class Filter {
 	
 	/* Attributes */
@@ -11,6 +13,7 @@ public class Filter {
 	private ArrayList<String> cuisinesOffered;
 	private ArrayList<String> mealType;
 	private ArrayList<String> dietRestrictions;
+//	private String priceRange;
 
 	/* Methods */
 	
@@ -27,23 +30,43 @@ public class Filter {
 		
 	}
 
-	public ArrayList<String> getPaymentType() {}
+	public ArrayList<String> getPaymentType() {
+		return paymentType;
+	}
   
-	public void setPaymentType(ArrayList<String> paymentType) {}
+	public void setPaymentType(ArrayList<String> paymentType) {
+		this.paymentType = paymentType;
+	}
 	
-	public ArrayList<String> getServices() {}
+	public ArrayList<String> getServices() {
+		return services;
+	}
   
-	public void setServices(ArrayList<String> services) {}
+	public void setServices(ArrayList<String> services) {
+		this.services = services;
+	}
 	
-	public ArrayList<String> getCuisinesOffered() {}
+	public ArrayList<String> getCuisinesOffered() {
+		return cuisinesOffered;
+	}
   
-	public void setCuisinesOffered(ArrayList<String> cuisinesOffered) {}
+	public void setCuisinesOffered(ArrayList<String> cuisinesOffered) {
+		this.cuisinesOffered = cuisinesOffered;
+	}
 	
-	public ArrayList<String> getMealType() {}
+	public ArrayList<String> getMealType() {
+		return mealType;
+	}
   
-	public void setMealType(ArrayList<String> mealType) {}
+	public void setMealType(ArrayList<String> mealType) {
+		this.mealType = mealType;
+	}
 	
-	public ArrayList<String> getDietRestrictions() {}
+	public ArrayList<String> getDietRestrictions() {
+		return dietRestrictions;
+	}
   
-	public void setDietRestrictions(ArrayList<String> dietRestrictions) {}
+	public void setDietRestrictions(ArrayList<String> dietRestrictions) {
+		this.dietRestrictions = dietRestrictions;
+	}
 }
