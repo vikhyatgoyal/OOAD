@@ -218,6 +218,36 @@ public class DbManager {
 		session.close();
 	}
 	
+	public Profile getAdminFromDb(String email) {
+		Session session = sessionFactory.openSession();                                                                                                          
+		session.beginTransaction();                                                                                                                              
+
+		Admin admin = (Admin) session.get(Admin.class, email);
+
+		session.getTransaction().commit();
+
+		session.close();
+
+		return admin;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Host> getAllHostProfiles()
+	{
+		Session session = sessionFactory.openSession();                                                                                                          
+		session.beginTransaction();
+
+		List<Host> hostProfiles = new ArrayList<>();
+
+		hostProfiles = session.createQuery("from Host").list();
+
+		session.getTransaction().commit();
+
+		session.close();
+
+		return hostProfiles;
+	}
+	
 	public void saveFeedbacksToDb(Feedback feedback){
 		Session session = sessionFactory.openSession();                                                                                                          
 		session.beginTransaction();                                                                                                                              
@@ -271,36 +301,6 @@ public class DbManager {
 		}
 
 		return feedbacks;
-	}
-	
-	public Profile getAdminFromDb(String email) {
-		Session session = sessionFactory.openSession();                                                                                                          
-		session.beginTransaction();                                                                                                                              
-
-		Admin admin = (Admin) session.get(Admin.class, email);
-
-		session.getTransaction().commit();
-
-		session.close();
-
-		return admin;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Host> getAllHostProfiles()
-	{
-		Session session = sessionFactory.openSession();                                                                                                          
-		session.beginTransaction();
-
-		List<Host> hostProfiles = new ArrayList<>();
-
-		hostProfiles = session.createQuery("from Host").list();
-
-		session.getTransaction().commit();
-
-		session.close();
-
-		return hostProfiles;
 	}
 	
 	@SuppressWarnings("unchecked")
