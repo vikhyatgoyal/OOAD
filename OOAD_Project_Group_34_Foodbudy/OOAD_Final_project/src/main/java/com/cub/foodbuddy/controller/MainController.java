@@ -149,10 +149,14 @@ public class MainController {
 		return filterManager.getFilterById(profile);
 	}
 		
+	@SuppressWarnings("deprecation")
 	@RequestMapping(value = "/endUser/filter/change/{email}", method = RequestMethod.POST)
-	public void setUserFilterById(@RequestBody Filter filter, @PathVariable String email){
+	public List<String> setUserFilterById(@RequestBody Filter filter, @PathVariable String email){
+		filterManager.addObserver(recommendationManager);
 		EndUser profile = (EndUser) profileManager.getProfileByEmail(email);
 		filterManager.setFilterById(profile, filter);
+		return recommendationManager.displayAutoUpdatedRecListFromDb(email);
+		
 	}
 	
 }
