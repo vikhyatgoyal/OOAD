@@ -2,9 +2,21 @@ package com.cub.foodbuddy.model;
 
 import java.util.List;
 
+
+
+//import java.util.ArrayList;
+//import java.util.Map;
+
+//import org.springframework.web.bind.annotation.RequestBody;
+
 public class EndUser extends Profile{
 	
-  private Feedback feedback;
+	/* Attributes */
+	@Transient
+	@Column(name="feedback", nullable = true)
+	private Feedback feedback;
+	@Embedded
+	@Column(name="filter", nullable = true)
 	private Filter filter;
 	
 	
@@ -29,18 +41,25 @@ public class EndUser extends Profile{
 	public Filter getFilter() {
 		return this.filter;
 	}
-
 	
-	public ArrayList< Map<String, String> > updateFilterAndGetRec(Filter filter){
+	public void editProfile(EndUser endUserProfile) {
+		this.setName(endUserProfile.getName());
+		this.setMobile(endUserProfile.getMobile());
+		this.setPassword(endUserProfile.getPassword());
 		
+		this.filter = endUserProfile.filter;
 	}
 	
-	public void giveFeedback(Feedback feedback) {
-		
-	}
-	
-	public void notifyEndUser() {
-		
-	}
+//	public ArrayList< Map<String, String> > updateFilterAndGetRec(Filter filter){
+//		
+//	}
+//	
+//	public void giveFeedback(Feedback feedback) {
+//		
+//	}
+//	
+//	public void notifyEndUser() {
+//		
+//	}
 	
 }
