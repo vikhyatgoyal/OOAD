@@ -52,5 +52,8 @@ public class FilterManager extends Observable{
 		endUser.updateFilters(filter);
 
 		this.setEmail(endUser.getEmail());
+	
+		setChanged();
+		notifyObservers();
 	}
 }
