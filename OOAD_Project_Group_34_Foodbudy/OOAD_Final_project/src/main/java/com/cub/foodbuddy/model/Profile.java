@@ -2,9 +2,6 @@ package com.cub.foodbuddy.model;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-
-@MappedSuperclass
 public abstract class Profile {
 
 	/* Attributes */
@@ -24,6 +21,15 @@ public abstract class Profile {
 		
 	}
 	
+	/* Overloaded constructor */
+	public Profile(String name, String email, String password, String mobile, String type) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.mobile = mobile;
+		this.type = type;
+	}
 	/* Getters and Setters */
 	public String getName() {
 		return name;
