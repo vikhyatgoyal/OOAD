@@ -53,6 +53,21 @@ public class MainController {
 	public void editHostProfile(@RequestBody Host hostprofile, @PathVariable String email) {
 		profileManager.editHostProfile(hostprofile, email);
 	}
+	@RequestMapping(value="/host/profiles/addServices/{email}", method = RequestMethod.POST)
+	public void addDefaultHostServices(@RequestBody Filter filter, @PathVariable String email) {
+		Host profile = (Host) profileManager.getProfileByEmail(email);
+		profileManager.addDefaultHostServices(profile, filter);
+		profileManager.editHostProfile(profile, email);
+	}
+	
+	@RequestMapping(value="/host/profiles/addMenu/{email}", method = RequestMethod.POST)
+	public void addMenu(@RequestBody Menu menu, @PathVariable String email) {
+		Host profile = (Host) profileManager.getProfileByEmail(email);
+		profileManager.addMenu(profile, menu);
+		profileManager.editHostProfile(profile, email);
+		/* TODO: Check the "Data Too Long" error */
+	}
+		
 	
 	@RequestMapping(value="/admin/profile/delete/{email}", method = RequestMethod.DELETE)
 	public void deleteProfile(@PathVariable String email) {
