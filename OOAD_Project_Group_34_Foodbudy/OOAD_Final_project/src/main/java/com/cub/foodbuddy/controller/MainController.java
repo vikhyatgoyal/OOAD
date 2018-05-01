@@ -21,6 +21,26 @@ public class MainController {
     private FilterManager filterManager;
 
 	
+	@RequestMapping(value = "/profiles/display/all", method = RequestMethod.GET)
+	public List<Profile> getAllProfiles() {
+		return profileManager.getAllProfiles();
+	}
+	
+	@RequestMapping(value = "/profiles/display/{type}", method = RequestMethod.GET)
+	public List<Profile> getProfilesByType(@PathVariable String type) {
+		return profileManager.getProfilesByType(type);
+	}
+	
+	@RequestMapping(value = "/profiles/display/email/{email}", method = RequestMethod.GET)
+	public Profile getProfileByEmail(@PathVariable String email) {
+		return profileManager.getProfileByEmail(email);
+	}
+
+	@RequestMapping(value="/profiles/add/{type}", method = RequestMethod.POST)
+	public void addProfile(@RequestBody ProfileFactory profileFactory, @PathVariable String type) {
+		profileManager.addProfile(profileFactory, type);
+	
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String getWelcomeMessage() {
 		return "Welcome to FoodBuddy";
