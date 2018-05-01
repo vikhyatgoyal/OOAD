@@ -2,13 +2,19 @@ package com.cub.foodbuddy.model;
 
 import java.util.List;
 
-
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 //import java.util.ArrayList;
 //import java.util.Map;
 
 //import org.springframework.web.bind.annotation.RequestBody;
 
+@Entity
+@Table(name="EndUser")
 public class EndUser extends Profile{
 	
 	/* Attributes */
