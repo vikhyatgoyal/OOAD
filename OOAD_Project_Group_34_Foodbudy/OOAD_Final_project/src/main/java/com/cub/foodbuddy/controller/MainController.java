@@ -158,5 +158,11 @@ public class MainController {
 		return recommendationManager.displayAutoUpdatedRecListFromDb(email);
 		
 	}
+		
+	@RequestMapping(value = "/endUser/recommendation/display/{email}", method = RequestMethod.GET)
+	public List<String> getRecommendationList(@PathVariable String email) {
+		/* This will internally call getRecommendation method of recommendationManager */
+		return recommendationManager.getRecommendation(email);
+	}
 	
 }
