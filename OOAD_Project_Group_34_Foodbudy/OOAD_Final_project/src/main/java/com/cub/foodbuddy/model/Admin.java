@@ -2,6 +2,11 @@ package com.cub.foodbuddy.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Admin")
 public class Admin extends Profile{
 	/* Attributes */
 	
