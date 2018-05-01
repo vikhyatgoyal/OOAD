@@ -77,5 +77,16 @@ public class MainController {
 		 * use that as the id */
 		feedbackManager.giveFeedback(feedback, email);
 	}
+		
+	@RequestMapping(value = "/endUser/feedback/display/{email}", method = RequestMethod.GET)
+	public List<Feedback> displayFeedback(@PathVariable String email){
+		return feedbackManager.getFeedbackById(email);
+	}
+	
+	@RequestMapping(value = "/host/feedback/display/{email}", method = RequestMethod.GET)
+	public List<Feedback> displayHostFeedback(@PathVariable String email){
+		Host profile = (Host) profileManager.getProfileByEmail(email);
+		return feedbackManager.getFeedbackByName(profile.getName());
+	}
 	
 }
