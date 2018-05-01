@@ -73,6 +73,16 @@ public class MainController {
 	public void deleteProfile(@PathVariable String email) {
 		profileManager.deleteProfile(email);
 	}
+	
+	@RequestMapping(value = "/admin/advertisement/add/{email}", method = RequestMethod.POST)
+	public void addAdvertisement(@RequestBody String adv, @PathVariable String email) {
+		profileManager.addAdvertisement(adv, email);
+	}
+	
+	@RequestMapping(value = "/advertisement/display/{email}", method = RequestMethod.GET)
+	public ArrayList<String> displayAdvertisement(@PathVariable String email) {
+		return profileManager.displayAdvertisement(email);
+	}
 		
 	@RequestMapping(value = "/profiles/update/{email}", method = RequestMethod.POST)
 	public void updateProfile(@RequestBody ProfileFactory profileFactory, @PathVariable String email){
