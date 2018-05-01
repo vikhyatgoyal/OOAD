@@ -46,7 +46,71 @@ public class RecommendationManager{
 		endUserFilter = endUser.getFilter();
 
 		hosts = dbManager.getAllHostProfiles();
+		
+		rankMap = scoreHosts(endUserFilter, hosts, email);
+
+		/* Check this */
+		for(Map.Entry<Integer,Host> entry : rankMap.entrySet()) {
+			Host host = entry.getValue();
+			
+			hostNames.add(host.getName());
+		}
+		
+//		Iterator itr = rankMap.entrySet().iterator();
+//		while (itr.hasNext()) {
+//
+//			Map.Entry pair = (Map.Entry)itr.next();
+//			hostNames.add(pair.getValue().getClass().getName());
+//		}
 
 		return hostNames;
+	}
+	
+	private TreeMap<Integer, Host> scoreHosts(Filter userFilter, List<Host> hosts, String email) {
+		HashMap<Integer, Host> rankHMap = new HashMap<Integer, Host>();
+		List<Feedback> userFeedbacks;
+		List<Feedback> hostFeedbacks;
+
+		userFeedbacks = dbManager.getFeedbackById(email);
+
+		for (Host h : hosts)
+		{
+			hostFeedbacks = dbManager.getFeedbackByName(h.getName());
+
+			int score = ((32/h.getServices().getCuisinesOffered().size()) * userFilter.getCuisinesOffered().size())
+					+ ((16/h.getServices().getPaymentType().size()) * userFilter.getPaymentType().size())
+					+ ((24/h.getServices().getServices().size()) * userFilter.getServices().size())
+					+ ((8/h.getServices().getMealType().size()) * userFilter.getMealType().size())
+					+ ((24/h.getServices().getDietRestrictions().size()) * userFilter.getDietRestrictions().size());
+
+			int highestRating = 0;
+			if (!userFeedbacks.isEmpty()) {
+				for (Feedback u : userFeedbacks) {
+					if (u.getName().equals(h.getName())) {
+						if (u.getRating() > highestRating) {
+							highestRating = u.getRating();
+						}
+	
+					}
+				}
+			}
+			score += highestRating;
+
+			int highestHostRating = 0;
+			if (!hostFeedbacks.isEmpty()) {
+				for (Feedback hf : hostFeedbacks) {
+					if (hf.getRating() > highestHostRating)
+						highestHostRating = hf.getRating();
+				}
+			}
+			
+			score += highestHostRating;
+
+			rankHMap.put(score, h);
+		}
+
+		TreeMap<Integer, Host> sortedRankHMap = new TreeMap<>(rankHMap);
+
+		return sortedRankHMap;
 	}
 }
