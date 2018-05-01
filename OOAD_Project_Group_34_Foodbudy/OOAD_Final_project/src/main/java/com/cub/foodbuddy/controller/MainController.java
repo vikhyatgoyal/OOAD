@@ -58,6 +58,34 @@ public class MainController {
 	public void deleteProfile(@PathVariable String email) {
 		profileManager.deleteProfile(email);
 	}
+		
+	@RequestMapping(value = "/profiles/update/{email}", method = RequestMethod.POST)
+	public void updateProfile(@RequestBody ProfileFactory profileFactory, @PathVariable String email){
+		/* Based on the field of the host profile that needs to be changed, 
+		 * the code can be internally implemented  */
+		profileManager.updateProfile(profileFactory, email);
+	}
+	
+	@RequestMapping(value = "/host/display/{email}", method = RequestMethod.GET)
+	public Profile displayHostProfile(@PathVariable String email){
+		/* Based on the field of the host profile that needs to be changed, 
+		 * the code can be internally implemented  */
+		return profileManager.getProfileByEmail(email);
+	}
+	
+	@RequestMapping(value = "/endUser/display/{email}", method = RequestMethod.GET)
+	public Profile displayEndUserProfile(@PathVariable String email){
+		/* Based on the field of the host profile that needs to be changed, 
+		 * the code can be internally implemented  */
+		return profileManager.getProfileByEmail(email);
+	}
+	
+	@RequestMapping(value = "/admin/display/{email}", method = RequestMethod.GET)
+	public Profile displayAdminProfile(@PathVariable String email){
+		/* Based on the field of the host profile that needs to be changed, 
+		 * the code can be internally implemented  */
+		return profileManager.getProfileByEmail(email);
+	}
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
